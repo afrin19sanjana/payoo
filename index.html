@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="max-w-md min-h-screen mx-auto bg-[#F4F5F7] pt-32">
+    <section >
+        <header>
+            <nav>
+             <div class="flex flex-col relative w-9/12 mx-30">
+                 <img  class="w-[200px]" src="assets/bg.png" alt="">
+                 <img class="w-[54px] absolute left-20 top-12"  src="assets/Group.png" alt="">
+             </div>
+            </nav>
+        </header>
+    </section>
+<section>
+        <div class="hero-content flex-col lg:flex-row-reverse w-full">
+          <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+            <form class="card-body">
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-bold text-black mb-2">Mobile Number</span>
+                </label>
+                <input value="01515633545" id="account-number" type="number" placeholder="Enter Your Number" class="input input-bordered bg-[#F4F5F7] rounded-3xl" required />
+              </div>
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text font-bold text-black mb-2">4 Digit pin</span>
+                </label>
+                <input value="1234" id="pin-number" type="password" placeholder="Enter your pin" class="input input-bordered bg-[#F4F5F7]  rounded-3xl " required />
+                
+              </div>
+              <div class="form-control mt-6">
+                <button id="login-btn" class="btn btn-primary w-full rounded-3xl bg-[#0874f2]">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      
+</section>
+<script src="script/login.js"></script>
+</body>
+</html>
