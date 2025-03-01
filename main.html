@@ -47,7 +47,7 @@
         <img class="w-10 mx-auto" src="assets/wallet1.png" alt="">
         <h2>Pay Bill</h2>
      </div>
-     <div class="shadow-2xl p-4 rounded-xl text-center ">
+     <div id="transaction" class="shadow-2xl p-4 rounded-xl text-center ">
         <img class="w-10 mx-auto" src="assets/transaction1.png" alt="">
         <h2>Transaction</h2>
      </div>
@@ -61,7 +61,7 @@
             <div class="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl rounded-4xl ">
               <form class="card-body">
                 <legend class="text-black font-bold">Select a Bank</legend>
-                <select class="select select-ghost w-full max-w-xs bg-[#F4F5F7] rounded-3xl">
+                <select id="allBank" class="select select-ghost w-full max-w-xs bg-[#F4F5F7] rounded-3xl">
                     <option disabled selected>Select Bank</option>
                     <option value="Bkash">Bkash</option>
                     <option value="Nagad">Nagad</option>
@@ -84,7 +84,7 @@
                   <label class="label">
                     <span class="label-text font-bold text-[#080808] mb-2">4 Digit pin</span>
                   </label>
-                  <input value="1234" id="pinNumber" type="password" placeholder="Enter your pin" class="input input-bordered bg-[#F4F5F7]  rounded-3xl " required />
+                  <input value="1234" id="pin" type="password" placeholder="Enter your pin" class="input input-bordered bg-[#F4F5F7]  rounded-3xl " required />
                   
                 </div>
                 <div class="form-control mt-6">
@@ -128,8 +128,18 @@
           </div>
     </div>
   </section>
+  <section id="transaction-box" class="bg-[#f4f5f7] mt-8 mb-4">
+    <div id="transaction-container">
+      <h2 class="text-xl font-bold py-4">Transaction History</h2>
+
+    </div>
+
+  </section>
+  
+  <script src="utilities/utilities.js"></script>
   <script src="script/addmony.js"></script>
   <script src="script/toggle.js"></script>
   <script src="script/cashOut.js"></script>
+  <script src="script/transaction.js"></script>
 </body>
 </html>

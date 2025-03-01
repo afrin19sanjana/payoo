@@ -1,20 +1,39 @@
-document.getElementById("addMoney-btn").addEventListener("click", function(event){
+document.getElementById("addMoney-btn").addEventListener("click", function (event) {
     event.preventDefault();
-   const addMoneyAmount = document.getElementById("amount").value;
-   const convertedAnount = parseFloat(addMoneyAmount);
-   const pin = document.getElementById("pinNumber").value;
-   const convertedPin = parseInt(pin);
-   const totalBalance = document.getElementById("total-balance").innerText;
-   const convertedTotalBalance = parseFloat(totalBalance);
-    if(convertedAnount && convertedPin){
-        if(convertedPin === 1234){
-            const sum = convertedTotalBalance+convertedAnount;
-            document.getElementById("total-balance").innerText = sum;       
-         }else{
-            alert("enter valid pin")
-         }
-    }else{
-       alert('Fill the amount')
+    const amount = getInputValueById("amount");
+    const pin = getInputValueById("pin");
+    const account = document.getElementById("account-number").value;
+    const totalBalance = getInnerTextById("total-balance");
+    const selectBank = document.getElementById("allBank").value;
+    console.log(selectBank);
+    
+    if(amount<0){
+    alert("only positive amount can be added")
+    return;
+    }
+
+    if (account.length === 11) {
+        if (pin === 1234) {
+            const sum = totalBalance + amount
+            getInnerTextByIdandValue("total-balance", sum);
+            const container = document.getElementById("transaction-container");
+            const div = document.createElement("div");
+            div.classList.add("bg-white","font-semibold","w-[80%]","mx-auto", "rounded-xl","text-center", "my-4");
+            div.innerHTML = `
+            <h1>Added Money from ${selectBank}</h1>
+            <h3>${amount} Tk</h3>
+            <p>to account number ${account}</p>
+            `
+          container.appendChild(div); 
+
+
+
+        } else {
+            alert("Enter valid pin")
+        }
+
+    } else {
+        console.log("not ok")
     }
 
 })

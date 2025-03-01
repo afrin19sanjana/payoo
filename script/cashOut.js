@@ -1,21 +1,29 @@
 document.getElementById("withdraw-btn").addEventListener("click", function(event){
-    event.preventDefault();
- const cashoutPin = document.getElementById("cashout-pinNumber").value;
- const convertedCashoutPin = parseInt(cashoutPin);
- const cashoutAmount =document.getElementById("cashout-amount").value;
- const convertedCashoutAmount = parseFloat(cashoutAmount);
- const totalBalance = document.getElementById("total-balance").innerText;
- const convertedTotalBalance = parseFloat(totalBalance);
- if(convertedCashoutAmount && convertedCashoutPin){
-  if(convertedCashoutPin === 1234){
-   const sum = convertedTotalBalance - convertedCashoutAmount
-   document.getElementById("total-balance").innerText = sum;
-   
-  }else{
-    alert("pin not valid")
-  }
- }else{
-    alert("Fill the amount")
+ event.preventDefault();
+ const amount = getInputValueById("cashout-amount");
+ const pin = getInputValueById("cashout-pinNumber");
+ const account = document.getElementById("cashout-account-number").value ;
+ const totalBalance = getInnerTextById("total-balance");
+ if(amount>totalBalance){
+    alert("amount limit exceed");
+    return;
  }
-    
+ if(account.length === 11){
+    if(pin === 1234){
+     const sum = totalBalance-amount
+     getInnerTextByIdandValue("total-balance", sum);
+     const container = document.getElementById("transaction-container");
+     const p = document.createElement("p");
+     p.innerText =`
+     withdrawn ${amount} from ${account} account
+     `
+     container.appendChild(p);
+     
+    }else{
+  alert("Enter valid pin")
+    }
+
+ }else{
+  alert("Account Number not valid");
+ }
 })

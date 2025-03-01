@@ -1,10 +1,12 @@
- document.getElementById("add-money-box").style.display = "block"
- document.getElementById("cashout-box").style.display = "none"
+document.getElementById("cashout-box").style.display = "none"
+document.getElementById("transaction-box").style.display = "none"
 document.getElementById("addmoney").addEventListener("click", function(event){
-    document.getElementById("add-money-box").style.display = "block"
-      document.getElementById("cashout-box").style.display = "none"
+   handleToggle("add-money-box", "block")
+   handleToggle("cashout-box", "none")
+   handleToggle("transaction-box", "none")
 })
 document.getElementById("cashout").addEventListener("click", function(){
-    document.getElementById("cashout-box").style.display = "block"
-      document.getElementById("add-money-box").style.display = "none"
+    handleToggle("cashout-box", "block")
+    handleToggle("add-money-box", "none")
+    handleToggle("transaction-box", "none")
 })
